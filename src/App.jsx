@@ -1,23 +1,19 @@
-import React, { useState } from "react";
 import "./App.css";
-import MyCarousel from "./Components/MyCarousel";
-import FilmGrid from "./Components/FilmGrid";
 import MyFooter from "./Components/MyFooter";
 import MyHome from "./Components/MyHome";
 import MyNav from "./Components/MyNav";
+import Gallery from "./Components/Gallery";
 
 function App() {
-  const [filmNames] = useState(["Harry Potter", "Avengers", "Star Wars"]);
-
   return (
     <div className="App">
       <MyNav />
       <MyHome />
-      {filmNames.map((filmName, index) => (
-        <MyCarousel key={index} mainTitle={`Film di ${filmName}`}>
-          <FilmGrid filmName={filmName} />
-        </MyCarousel>
-      ))}
+      <div>
+        <h2>Trending Now</h2>
+        <Gallery searchQuery="Harry Potter" />
+      </div>
+
       <MyFooter />
     </div>
   );
